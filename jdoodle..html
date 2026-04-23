@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Afficheur de nom</title>
+</head>
+
+<body>
+
+  <h2>Quiz ICS3U</h2>
+
+  <label>Question 1: Wut is the answer to this gng</label>
+  <br>
+  <input type="checkbox"  name = 'option' value = 'option1'> Yes
+  <br>
+  <input type="checkbox" name = 'option' value = 'option2'> No
+  <br>
+  <input type="checkbox" name = 'option' value = 'option3'> Maybe
+  <h3 hidden id = 'réponse1'> Réponse: </h3>
+
+  <br><br>
+  
+  <label>Question 2: Why are u even here twin!</label>
+  <br>
+  <input type="radio"  name = 'option2' value = 'option1'> your cute!
+  <br>
+  <input type="radio" name = 'option2' value = 'option2'> your cute!
+  <br>
+  <input type="radio" name = 'option2' value = 'option3'> your cute!
+  <h3 hidden id = 'réponse2'> Réponse: </h3>
+
+  <br><br>
+  
+   <label for = 'option3'>Question 3: Ok last question, guess the answer gng</label>
+  <br>
+  <input type = 'text' name = 'option3' value = 'ok good luck!'> 
+  <h3 hidden id = 'réponse3'> Réponse: </h3>
+
+  <br><br>
+  
+  <h3 hidden id = 'résultat'> Résultat:  </h3>
+
+  <button onclick="soumettre()">Soumettre Réponse</button>
+  
+
+  <p id="resultat"></p>
+
+  <script>
+  
+    
+    function soumettre() {
+        
+        var réponseauxquestion = ['option2', 'option3', 'nigeria']
+  
+    var questionanswered1 = document.getElementsByName('option')
+    
+    var questionanswered2 = document.getElementsByName('option2')
+    
+    var questionanswered3 = document.getElementsByName('option3')
+    
+    var correct = 0
+    
+    var totalquestion = réponseauxquestion.length
+        
+        var showanswer1 = document.getElementById('réponse1')
+        var showanswer2 = document.getElementById('réponse2')
+        var showanswer3 = document.getElementById('réponse3')
+        var resultat = document.getElementById('résultat')
+        var pourcentage = 0
+        
+        
+        for (let i = 0 ; i < questionanswered1.length; i++) {
+            let optionselected = questionanswered1[i]
+            
+            if (optionselected.checked && optionselected.value == réponseauxquestion[0]) {
+                correct += 1
+                showanswer1.innerHTML = 'Réponse: ' + réponseauxquestion[0]
+                showanswer1.hidden = false
+            }
+            
+        }
+        
+        
+        for (let i = 0 ; i < questionanswered2.length; i++) {
+            let optionselected = questionanswered2[i]
+            
+            if (optionselected.checked && optionselected.value == réponseauxquestion[1]) {
+                correct += 1
+                showanswer2.innerHTML = 'Réponse: ' + réponseauxquestion[1]
+                showanswer2.hidden = false
+            }
+            
+        }
+        
+        
+        for (let i = 0 ; i < questionanswered3.length; i++) {
+            let optionselected = questionanswered3[i]
+            
+            if (optionselected.value == réponseauxquestion[2]) {
+                correct += 1
+                showanswer3.innerHTML = 'Réponse: ' + réponseauxquestion[2]
+                showanswer3.hidden = false
+            }
+            
+        }
+        
+        résultat.hidden = false
+        
+        résultat.innerHTML = 'Résultat: ' + (correct / totalquestion * 100) + '%'
+    }
+    
+    
+  </script>
+
+</body>
+</html>
