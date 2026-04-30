@@ -11,104 +11,158 @@
 
   <label>Question 1: Wut is the answer to this gng</label>
   <br>
-  <input type="checkbox"  name = 'option' value = 'option1'> Yes
+  <input type="checkbox" id="q1_option1" name="option" value="option1">
+  <label for="q1_option1">Yes</label>
   <br>
-  <input type="checkbox" name = 'option' value = 'option2'> No
+
+  <input type="checkbox" id="q1_option2" name="option" value="option2">
+  <label for="q1_option2">No</label>
   <br>
-  <input type="checkbox" name = 'option' value = 'option3'> Maybe
-  <h3 hidden id = 'réponse1'> Réponse: </h3>
+
+  <input type="checkbox" id="q1_option3" name="option" value="option3">
+  <label for="q1_option3">Maybe</label>
+
+  <h3 hidden id="réponse1">Réponse:</h3>
 
   <br><br>
   
   <label>Question 2: Why are u even here twin!</label>
   <br>
-  <input type="radio"  name = 'option2' value = 'option1'> your cute!
+  <input type="radio" id="q2_option1" name="option2" value="option1">
+  <label for="q2_option1">your cute!</label>
   <br>
-  <input type="radio" name = 'option2' value = 'option2'> your cute!
+
+  <input type="radio" id="q2_option2" name="option2" value="option2">
+  <label for="q2_option2">your cute!</label>
   <br>
-  <input type="radio" name = 'option2' value = 'option3'> your cute!
-  <h3 hidden id = 'réponse2'> Réponse: </h3>
+
+  <input type="radio" id="q2_option3" name="option2" value="option3">
+  <label for="q2_option3">your cute!</label>
+
+  <h3 hidden id="réponse2">Réponse:</h3>
 
   <br><br>
   
-   <label for = 'option3'>Question 3: Ok last question, guess the answer gng</label>
+  <label for="option3">Question 3: Ok last question, guess the answer gng</label>
   <br>
-  <input type = 'text' name = 'option3' value = 'ok good luck!'> 
-  <h3 hidden id = 'réponse3'> Réponse: </h3>
+  <input type="text" id="option3" name="option3" value="ok good luck!"> 
+
+  <h3 hidden id="réponse3">Réponse:</h3>
+
+  <br><br>
+
+  <!-- Question 4 with select box and option groups -->
+  <label for="q4_select">Question 4: Pick the correct country</label>
+  <br>
+
+  <select id="q4_select" name="option4">
+    <option value="">-- Choose an answer --</option>
+
+    <optgroup label="Africa">
+      <option value="nigeria">Nigeria</option>
+      <option value="egypt">Egypt</option>
+      <option value="kenya">Kenya</option>
+    </optgroup>
+
+    <optgroup label="Asia">
+      <option value="japan">Japan</option>
+      <option value="china">China</option>
+      <option value="india">India</option>
+    </optgroup>
+
+    <optgroup label="America">
+      <option value="canada">Canada</option>
+      <option value="brazil">Brazil</option>
+      <option value="mexico">Mexico</option>
+    </optgroup>
+  </select>
+
+  <h3 hidden id="réponse4">Réponse:</h3>
 
   <br><br>
   
-  <h3 hidden id = 'résultat'> Résultat:  </h3>
+  <h3 hidden id="résultat">Résultat:</h3>
 
   <button onclick="soumettre()">Soumettre Réponse</button>
-  
-
-  <p id="resultat"></p>
 
   <script>
-  
-    
+
+    // Possible random answers for question 4
+    var randomAnswers = [
+      "nigeria", "egypt", "kenya",
+      "japan", "china", "india",
+      "canada", "brazil", "mexico"
+    ];
+
+    // Pick one random answer
+    var randomIndex = Math.floor(Math.random() * randomAnswers.length);
+    var randomCorrectAnswer = randomAnswers[randomIndex];
+
     function soumettre() {
         
-        var réponseauxquestion = ['option2', 'option3', 'nigeria']
+      var réponseauxquestion = ["option2", "option3", "nigeria", randomCorrectAnswer];
   
-    var questionanswered1 = document.getElementsByName('option')
+      var questionanswered1 = document.getElementsByName("option");
+      var questionanswered2 = document.getElementsByName("option2");
+      var questionanswered3 = document.getElementsByName("option3");
+      var questionanswered4 = document.getElementById("q4_select");
     
-    var questionanswered2 = document.getElementsByName('option2')
-    
-    var questionanswered3 = document.getElementsByName('option3')
-    
-    var correct = 0
-    
-    var totalquestion = réponseauxquestion.length
+      var correct = 0;
+      var totalquestion = réponseauxquestion.length;
         
-        var showanswer1 = document.getElementById('réponse1')
-        var showanswer2 = document.getElementById('réponse2')
-        var showanswer3 = document.getElementById('réponse3')
-        var resultat = document.getElementById('résultat')
-        var pourcentage = 0
+      var showanswer1 = document.getElementById("réponse1");
+      var showanswer2 = document.getElementById("réponse2");
+      var showanswer3 = document.getElementById("réponse3");
+      var showanswer4 = document.getElementById("réponse4");
+      var resultat = document.getElementById("résultat");
         
-        
-        for (let i = 0 ; i < questionanswered1.length; i++) {
-            let optionselected = questionanswered1[i]
+      // Check question 1
+      for (let i = 0; i < questionanswered1.length; i++) {
+        let optionselected = questionanswered1[i];
             
-            if (optionselected.checked && optionselected.value == réponseauxquestion[0]) {
-                correct += 1
-                showanswer1.innerHTML = 'Réponse: ' + réponseauxquestion[0]
-                showanswer1.hidden = false
-            }
-            
+        if (optionselected.checked && optionselected.value == réponseauxquestion[0]) {
+          correct += 1;
         }
+      }
+
+      showanswer1.innerHTML = "Réponse: " + réponseauxquestion[0];
+      showanswer1.hidden = false;
         
-        
-        for (let i = 0 ; i < questionanswered2.length; i++) {
-            let optionselected = questionanswered2[i]
+      // Check question 2
+      for (let i = 0; i < questionanswered2.length; i++) {
+        let optionselected = questionanswered2[i];
             
-            if (optionselected.checked && optionselected.value == réponseauxquestion[1]) {
-                correct += 1
-                showanswer2.innerHTML = 'Réponse: ' + réponseauxquestion[1]
-                showanswer2.hidden = false
-            }
-            
+        if (optionselected.checked && optionselected.value == réponseauxquestion[1]) {
+          correct += 1;
         }
+      }
+
+      showanswer2.innerHTML = "Réponse: " + réponseauxquestion[1];
+      showanswer2.hidden = false;
         
-        
-        for (let i = 0 ; i < questionanswered3.length; i++) {
-            let optionselected = questionanswered3[i]
+      // Check question 3
+      for (let i = 0; i < questionanswered3.length; i++) {
+        let optionselected = questionanswered3[i];
             
-            if (optionselected.value == réponseauxquestion[2]) {
-                correct += 1
-                showanswer3.innerHTML = 'Réponse: ' + réponseauxquestion[2]
-                showanswer3.hidden = false
-            }
-            
+        if (optionselected.value.toLowerCase() == réponseauxquestion[2]) {
+          correct += 1;
         }
+      }
+
+      showanswer3.innerHTML = "Réponse: " + réponseauxquestion[2];
+      showanswer3.hidden = false;
+
+      // Check question 4 select box
+      if (questionanswered4.value == réponseauxquestion[3]) {
+        correct += 1;
+      }
+
+      showanswer4.innerHTML = "Réponse: " + réponseauxquestion[3];
+      showanswer4.hidden = false;
         
-        résultat.hidden = false
-        
-        résultat.innerHTML = 'Résultat: ' + (correct / totalquestion * 100) + '%'
+      resultat.hidden = false;
+      resultat.innerHTML = "Résultat: " + (correct / totalquestion * 100) + "%";
     }
-    
     
   </script>
 
