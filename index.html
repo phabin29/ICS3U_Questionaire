@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Afficheur de nom</title>
+  <title>Quiz ICS3U</title>
 </head>
 
 <body>
@@ -10,220 +10,229 @@
   <!-- Titre principal du quiz -->
   <h2>Quiz ICS3U</h2>
 
-  <!-- Question 1 : choix multiples avec cases à cocher -->
-  <label>Question 1: Wut is the answer to this gng</label>
+  <!-- Question 1 : cases à cocher -->
+  <label>Question 1 : Quelle est la bonne réponse?</label>
   <br>
 
-  <!-- Première option de la question 1 -->
-  <input type="checkbox" id="q1_option1" name="option" value="option1">
-  <label for="q1_option1">Yes</label>
+  <input type="checkbox" id="q1_option1" name="option" value="oui">
+  <label for="q1_option1">Oui</label>
   <br>
 
-  <!-- Deuxième option de la question 1 -->
-  <input type="checkbox" id="q1_option2" name="option" value="option2">
-  <label for="q1_option2">No</label>
+  <input type="checkbox" id="q1_option2" name="option" value="non">
+  <label for="q1_option2">Non</label>
   <br>
 
-  <!-- Troisième option de la question 1 -->
-  <input type="checkbox" id="q1_option3" name="option" value="option3">
-  <label for="q1_option3">Maybe</label>
+  <input type="checkbox" id="q1_option3" name="option" value="peut-être">
+  <label for="q1_option3">Peut-être</label>
 
-  <!-- La bonne réponse de la question 1 est cachée au départ -->
-  <h3 hidden id="réponse1">Réponse:</h3>
+  <h3 hidden id="réponse1">Réponse :</h3>
 
   <br><br>
   
-  <!-- Question 2 : une seule réponse possible avec des boutons radio -->
-  <label>Question 2: Why are u even here twin!</label>
+  <!-- Question 2 : boutons radio -->
+  <label>Question 2 : Pourquoi es-tu ici?</label>
   <br>
 
-  <!-- Première option de la question 2 -->
-  <input type="radio" id="q2_option1" name="option2" value="option1">
-  <label for="q2_option1">your cute!</label>
+  <input type="radio" id="q2_option1" name="option2" value="pour-jouer">
+  <label for="q2_option1">Pour jouer</label>
   <br>
 
-  <!-- Deuxième option de la question 2 -->
-  <input type="radio" id="q2_option2" name="option2" value="option2">
-  <label for="q2_option2">your cute!</label>
+  <input type="radio" id="q2_option2" name="option2" value="pour-apprendre">
+  <label for="q2_option2">Pour apprendre</label>
   <br>
 
-  <!-- Troisième option de la question 2 -->
-  <input type="radio" id="q2_option3" name="option2" value="option3">
-  <label for="q2_option3">your cute!</label>
+  <input type="radio" id="q2_option3" name="option2" value="je-ne-sais-pas">
+  <label for="q2_option3">Je ne sais pas</label>
 
-  <!-- La bonne réponse de la question 2 est cachée au départ -->
-  <h3 hidden id="réponse2">Réponse:</h3>
+  <h3 hidden id="réponse2">Réponse :</h3>
 
   <br><br>
   
-  <!-- Question 3 : réponse écrite dans une zone de texte -->
-  <label for="option3">Question 3: Ok last question, guess the answer gng</label>
+  <!-- Question 3 : champ de texte -->
+  <label for="option3">Question 3 : Écris le nom du pays correct.</label>
   <br>
 
-  <!-- L'utilisateur écrit sa réponse ici -->
-  <input type="text" id="option3" name="option3" value="ok good luck!"> 
+  <input type="text" id="option3" name="option3" value="bonne chance!"> 
 
-  <!-- La bonne réponse de la question 3 est cachée au départ -->
-  <h3 hidden id="réponse3">Réponse:</h3>
+  <h3 hidden id="réponse3">Réponse :</h3>
 
   <br><br>
 
-  <!-- Question 4 : liste déroulante avec des groupes d’options -->
-  <label for="q4_select">Question 4: Pick the correct country</label>
+  <!-- Question 4 : liste déroulante avec groupes d’options -->
+  <label for="q4_select">Question 4 : Choisis le bon pays.</label>
   <br>
 
-  <!-- Liste déroulante pour choisir un pays -->
   <select id="q4_select" name="option4">
+    <option value="">-- Choisis une réponse --</option>
 
-    <!-- Option vide par défaut -->
-    <option value="">-- Choose an answer --</option>
-
-    <!-- Groupe de pays en Afrique -->
-    <optgroup label="Africa">
-      <option value="nigeria">Nigeria</option>
-      <option value="egypt">Egypt</option>
+    <optgroup label="Afrique">
+      <option value="nigéria">Nigéria</option>
+      <option value="égypte">Égypte</option>
       <option value="kenya">Kenya</option>
     </optgroup>
 
-    <!-- Groupe de pays en Asie -->
-    <optgroup label="Asia">
-      <option value="japan">Japan</option>
-      <option value="china">China</option>
-      <option value="india">India</option>
+    <optgroup label="Asie">
+      <option value="japon">Japon</option>
+      <option value="chine">Chine</option>
+      <option value="inde">Inde</option>
     </optgroup>
 
-    <!-- Groupe de pays en Amérique -->
-    <optgroup label="America">
+    <optgroup label="Amérique">
       <option value="canada">Canada</option>
-      <option value="brazil">Brazil</option>
-      <option value="mexico">Mexico</option>
+      <option value="brésil">Brésil</option>
+      <option value="mexique">Mexique</option>
     </optgroup>
   </select>
 
-  <!-- La bonne réponse de la question 4 est cachée au départ -->
-  <h3 hidden id="réponse4">Réponse:</h3>
+  <h3 hidden id="réponse4">Réponse :</h3>
+
+  <br><br>
+
+  <!-- Question 5 : curseur -->
+  <label for="q5_range">Question 5 : Choisis le nombre chanceux.</label>
+  <br>
+
+  <input type="range" id="q5_range" name="option5" min="1" max="10" value="5" oninput="afficherValeurRange()">
+
+  <p>Nombre choisi : <span id="range_value">5</span></p>
+
+  <h3 hidden id="réponse5">Réponse :</h3>
+
+  <br><br>
+
+  <!-- Question 6 : choix d'une date -->
+  <label for="q6_date">Question 6 : Choisis la bonne date.</label>
+  <br>
+
+  <input type="date" id="q6_date" name="option6">
+
+  <h3 hidden id="réponse6">Réponse :</h3>
 
   <br><br>
   
-  <!-- Le résultat final est caché au départ -->
-  <h3 hidden id="résultat">Résultat:</h3>
+  <!-- Résultat final -->
+  <h3 hidden id="résultat">Résultat :</h3>
 
-  <!-- Bouton qui appelle la fonction soumettre() quand on clique dessus -->
-  <button onclick="soumettre()">Soumettre Réponse</button>
+  <!-- Bouton pour soumettre les réponses -->
+  <button onclick="soumettre()">Soumettre les réponses</button>
 
   <script>
 
-    // Tableau contenant toutes les réponses possibles pour la question 4
+    // Réponses possibles pour la question 4
     var randomAnswers = [
-      "nigeria", "egypt", "kenya",
-      "japan", "china", "india",
-      "canada", "brazil", "mexico"
+      "nigéria", "égypte", "kenya",
+      "japon", "chine", "inde",
+      "canada", "brésil", "mexique"
     ];
 
-    // On choisit un index au hasard dans le tableau randomAnswers
+    // Choisit une réponse au hasard pour la question 4
     var randomIndex = Math.floor(Math.random() * randomAnswers.length);
-
-    // On choisit une bonne réponse au hasard pour la question 4
     var randomCorrectAnswer = randomAnswers[randomIndex];
 
-    // Fonction appelée lorsque l'utilisateur clique sur le bouton
+    // Fonction pour afficher la valeur du curseur
+    function afficherValeurRange() {
+      var range = document.getElementById("q5_range");
+      var rangeValue = document.getElementById("range_value");
+
+      rangeValue.innerHTML = range.value;
+    }
+
+    // Fonction appelée quand l'utilisateur clique sur le bouton
     function soumettre() {
         
-      // Tableau contenant les bonnes réponses du quiz
-      // Question 4 utilise une réponse choisie au hasard
-      var réponseauxquestion = ["option2", "option3", "nigeria", randomCorrectAnswer];
+      // Tableau avec les bonnes réponses
+      var réponseauxquestion = [
+        "non", 
+        "pour-apprendre", 
+        "nigéria", 
+        randomCorrectAnswer,
+        "7",
+        "2026-05-01"
+      ];
   
-      // Récupère toutes les cases à cocher de la question 1
+      // Récupère les réponses de l'utilisateur
       var questionanswered1 = document.getElementsByName("option");
-
-      // Récupère tous les boutons radio de la question 2
       var questionanswered2 = document.getElementsByName("option2");
-
-      // Récupère la zone de texte de la question 3
       var questionanswered3 = document.getElementsByName("option3");
-
-      // Récupère la liste déroulante de la question 4
       var questionanswered4 = document.getElementById("q4_select");
+      var questionanswered5 = document.getElementById("q5_range");
+      var questionanswered6 = document.getElementById("q6_date");
     
-      // Variable qui compte le nombre de bonnes réponses
       var correct = 0;
-
-      // Nombre total de questions
       var totalquestion = réponseauxquestion.length;
         
-      // Récupère les éléments HTML qui afficheront les bonnes réponses
       var showanswer1 = document.getElementById("réponse1");
       var showanswer2 = document.getElementById("réponse2");
       var showanswer3 = document.getElementById("réponse3");
       var showanswer4 = document.getElementById("réponse4");
+      var showanswer5 = document.getElementById("réponse5");
+      var showanswer6 = document.getElementById("réponse6");
 
-      // Récupère l’élément HTML qui affichera le résultat final
       var resultat = document.getElementById("résultat");
         
       // Vérification de la question 1
       for (let i = 0; i < questionanswered1.length; i++) {
-
-        // Récupère l’option actuelle dans la boucle
         let optionselected = questionanswered1[i];
             
-        // Si l’option est cochée et correspond à la bonne réponse
         if (optionselected.checked && optionselected.value == réponseauxquestion[0]) {
           correct += 1;
         }
       }
 
-      // Affiche la bonne réponse de la question 1
-      showanswer1.innerHTML = "Réponse: " + réponseauxquestion[0];
+      showanswer1.innerHTML = "Réponse : " + réponseauxquestion[0];
       showanswer1.hidden = false;
         
       // Vérification de la question 2
       for (let i = 0; i < questionanswered2.length; i++) {
-
-        // Récupère l’option actuelle dans la boucle
         let optionselected = questionanswered2[i];
             
-        // Si l’option est sélectionnée et correspond à la bonne réponse
         if (optionselected.checked && optionselected.value == réponseauxquestion[1]) {
           correct += 1;
         }
       }
 
-      // Affiche la bonne réponse de la question 2
-      showanswer2.innerHTML = "Réponse: " + réponseauxquestion[1];
+      showanswer2.innerHTML = "Réponse : " + réponseauxquestion[1];
       showanswer2.hidden = false;
         
       // Vérification de la question 3
       for (let i = 0; i < questionanswered3.length; i++) {
-
-        // Récupère la réponse écrite par l'utilisateur
         let optionselected = questionanswered3[i];
             
-        // Compare la réponse de l'utilisateur avec la bonne réponse
-        // toLowerCase() permet d’ignorer les majuscules
         if (optionselected.value.toLowerCase() == réponseauxquestion[2]) {
           correct += 1;
         }
       }
 
-      // Affiche la bonne réponse de la question 3
-      showanswer3.innerHTML = "Réponse: " + réponseauxquestion[2];
+      showanswer3.innerHTML = "Réponse : " + réponseauxquestion[2];
       showanswer3.hidden = false;
 
       // Vérification de la question 4
-      // On compare la valeur choisie dans la liste déroulante avec la bonne réponse
       if (questionanswered4.value == réponseauxquestion[3]) {
         correct += 1;
       }
 
-      // Affiche la bonne réponse de la question 4
-      showanswer4.innerHTML = "Réponse: " + réponseauxquestion[3];
+      showanswer4.innerHTML = "Réponse : " + réponseauxquestion[3];
       showanswer4.hidden = false;
+
+      // Vérification de la question 5
+      if (questionanswered5.value == réponseauxquestion[4]) {
+        correct += 1;
+      }
+
+      showanswer5.innerHTML = "Réponse : " + réponseauxquestion[4];
+      showanswer5.hidden = false;
+
+      // Vérification de la question 6
+      if (questionanswered6.value == réponseauxquestion[5]) {
+        correct += 1;
+      }
+
+      showanswer6.innerHTML = "Réponse : " + réponseauxquestion[5];
+      showanswer6.hidden = false;
         
       // Affiche le résultat final
       resultat.hidden = false;
-
-      // Calcule et affiche le pourcentage obtenu
-      resultat.innerHTML = "Résultat: " + (correct / totalquestion * 100) + "%";
+      resultat.innerHTML = "Résultat : " + (correct / totalquestion * 100) + "%";
     }
     
   </script>
